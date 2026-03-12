@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Connections</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Custom Connections</h1>
+            <p id="subtitle">Create your own game for a friend!</p>
+        </header>
+
+        <!-- SETUP PHASE (Player 1) -->
+        <div id="setup-phase" class="phase active">
+            <h2>Player 1: Create 4 Categories</h2>
+            <p>Select 4 words that share a connection, name the category, and group them.</p>
+            
+            <div id="setup-categories" class="solved-categories"></div>
+            
+            <div id="setup-grid" class="grid"></div>
+            
+            <div class="controls setup-controls">
+                <input type="text" id="category-name" placeholder="Enter category name (e.g., 'Colors')" disabled>
+                <button id="btn-group" disabled>Group (Select 4 words)</button>
+            </div>
+            
+            <button id="btn-start-game" class="hidden primary-btn">Start Game for Player 2</button>
+        </div>
+
+        <!-- PLAY PHASE (Player 2) -->
+        <div id="play-phase" class="phase hidden">
+            <h2>Player 2: Find the Connections</h2>
+            <p>Group the words into 4 categories of 4.</p>
+            
+            <div id="play-categories" class="solved-categories"></div>
+            
+            <div id="play-grid" class="grid"></div>
+            
+            <div class="mistakes-container">
+                <span>Mistakes remaining:</span>
+                <div id="mistakes-dots" class="dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            
+            <div class="controls play-controls">
+                <button id="btn-shuffle">Shuffle</button>
+                <button id="btn-deselect">Deselect All</button>
+                <button id="btn-submit" disabled>Submit</button>
+            </div>
+            
+            <div id="game-over-message" class="hidden">
+                <h2 id="end-title"></h2>
+                <button id="btn-restart" class="primary-btn">Play Again</button>
+            </div>
+        </div>
+        
+        <!-- Toast Notification -->
+        <div id="toast" class="toast hidden">Message</div>
+    </div>
+
+    <script src="words.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

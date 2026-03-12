@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Dice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Math Dice</h1>
+            <div class="score-container">Score: <span id="score">0</span></div>
+            <p>Roll the dice and build the longest valid equation!</p>
+        </header>
+
+        <div class="game-board">
+            <div class="equation-display" id="equation-display">
+                <div class="placeholder">Click or drag dice to build equation...</div>
+            </div>
+
+            <div class="palette">
+                <h3>Dice Pool</h3>
+                <div id="dice-pool" class="btn-group">
+                    <!-- Dice buttons will be injected here -->
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="btn-roll" class="btn control-btn">Roll Dice</button>
+                <button id="btn-clear" class="btn control-btn">Clear Board</button>
+                <button id="btn-submit" class="btn primary-btn">Submit Equation</button>
+            </div>
+
+            <div class="end-game-controls">
+                <button id="btn-end-game" class="btn danger-btn">End Game & Save Score</button>
+            </div>
+
+            <div id="message" class="message hidden"></div>
+        </div>
+
+        <div class="leaderboard-section">
+            <h2>High Scores</h2>
+            <ol id="leaderboard-list">
+                <!-- Scores will be injected here -->
+            </ol>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

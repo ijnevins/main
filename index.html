@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        :root {
+            --bg-color: #f4f4f9;
+            --text-color: #333;
+            --primary: #4a90e2;
+            --nav-bg: #ffffff;
+            --nav-text: #333;
+            --nav-hover: #f0f0f0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            background-color: var(--nav-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .nav-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--nav-text);
+            padding: 0 20px;
+            font-weight: 500;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--nav-hover);
+            color: var(--primary);
+        }
+
+        /* Dropdown Styles */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 70px; /* Height of navbar */
+            left: 0;
+            background-color: var(--nav-bg);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 15px 20px;
+            color: var(--nav-text);
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--nav-hover);
+            color: var(--primary);
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        .games-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 800px;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .game-card h2 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .game-card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .play-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="/" class="nav-brand">My Website</a>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="splitflap/" class="nav-link">Splitflap</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Games ▾</a>
+                <div class="dropdown-menu">
+                    <a href="connections/" class="dropdown-item">Custom Connections</a>
+                    <a href="math/" class="dropdown-item">Math Dice</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Welcome to My Website</h1>
+
+        <div class="games-grid">
+            <a href="splitflap/" class="game-card">
+                <h2>Splitflap</h2>
+                <p>A beautiful splitflap display simulation.</p>
+                <div class="play-btn">View Project</div>
+            </a>
+
+            <a href="connections/" class="game-card">
+                <h2>Custom Connections</h2>
+                <p>Create a custom 16-word puzzle for a friend to solve, just like the NYT game!</p>
+                <div class="play-btn">Play Now</div>
+            </a>
+
+            <a href="math/" class="game-card">
+                <h2>Math Dice</h2>
+                <p>Roll the dice and build the longest mathematical equation you can to score points!</p>
+                <div class="play-btn">Play Now</div>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
