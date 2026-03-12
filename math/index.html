@@ -5,8 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Dice</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Navigation Bar Styles */
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 70px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .nav-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            padding: 0 20px;
+            font-weight: 500;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .nav-link:hover {
+            background-color: #f0f0f0;
+            color: #4a90e2;
+        }
+
+        /* Dropdown Styles */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            background-color: #ffffff;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f0f0f0;
+            color: #4a90e2;
+        }
+        
+        body {
+            padding-top: 70px; /* Make room for navbar */
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="../" class="nav-brand">My Website</a>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="../" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://ijnevins.github.io/splitflap/frontend/website.html" class="nav-link">Splitflap</a>
+            </li>
+            <li class="nav-item">
+                <a href="../countdown/" class="nav-link">Countdown</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link" style="color: #4a90e2;">Games ▾</a>
+                <div class="dropdown-menu">
+                    <a href="../connections/" class="dropdown-item">Custom Connections</a>
+                    <a href="#" class="dropdown-item" style="color: #4a90e2;">Math Dice</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
     <div class="container">
         <header>
             <h1>Math Dice</h1>
